@@ -27,58 +27,58 @@ def image_to_base64(img: Image.Image, format="PNG"):
 
 # === Welcome Section ===
 if section == "Welcome":
-    # Load banner
-    banner_path = r"C:\Users\choo12204\PycharmProjects\Helloworld\pythonProject\DSC01631.JPG"
-    banner_img = Image.open(banner_path).convert("RGB")
-    banner_b64 = image_to_base64(banner_img, format="JPEG")
+    st.title("👋 Welcome to My Portfolio")
 
-    # Load and crop profile image circular
-    profile_path = r"C:\Users\choo12204\PycharmProjects\Helloworld\pythonProject\IMG_4185.JPG"
-    profile_img = Image.open(profile_path).convert("RGBA")
+    # Upload Banner and Profile Image
+    uploaded_banner = st.file_uploader("Upload banner image (JPG/PNG)", type=["jpg", "jpeg", "png"])
+    uploaded_profile = st.file_uploader("Upload profile image (JPG/PNG)", type=["jpg", "jpeg", "png"])
 
-    size = min(profile_img.size)
-    left = (profile_img.width - size) // 2
-    top = (profile_img.height - size) // 2
-    cropped = profile_img.crop((left, top, left + size, top + size))
+    if uploaded_banner and uploaded_profile:
+        banner_img = Image.open(uploaded_banner).convert("RGB")
+        profile_img = Image.open(uploaded_profile).convert("RGBA")
 
-    mask = Image.new("L", (size, size), 0)
-    draw = ImageDraw.Draw(mask)
-    draw.ellipse((0, 0, size, size), fill=255)
+        banner_b64 = image_to_base64(banner_img, format="JPEG")
 
-    circular = ImageOps.fit(cropped, (size, size))
-    circular.putalpha(mask)
-    circular_b64 = image_to_base64(circular)
+        # Create circular profile image
+        size = min(profile_img.size)
+        left = (profile_img.width - size) // 2
+        top = (profile_img.height - size) // 2
+        cropped = profile_img.crop((left, top, left + size, top + size))
 
+        mask = Image.new("L", (size, size), 0)
+        draw = ImageDraw.Draw(mask)
+        draw.ellipse((0, 0, size, size), fill=255)
 
-    # HTML layout with overlap
-    html = f"""
-    <div style="position: relative; text-align: left;">
-        <img src="data:image/jpeg;base64,{banner_b64}" style="width: 100%; border-radius: 10px;">
-        <img src="data:image/png;base64,{circular_b64}"
-             style="position: absolute; bottom: -60px; left: 40px;
-                    width: 150px; height: 150px; border-radius: 50%; border: 5px solid white;">
-    </div>
-    <br><br>
-    """
+        circular = ImageOps.fit(cropped, (size, size))
+        circular.putalpha(mask)
+        circular_b64 = image_to_base64(circular)
 
-    st.markdown(html, unsafe_allow_html=True)
+        # Layout
+        html = f"""
+        <div style="position: relative; text-align: left;">
+            <img src="data:image/jpeg;base64,{banner_b64}" style="width: 100%; border-radius: 10px;">
+            <img src="data:image/png;base64,{circular_b64}"
+                 style="position: absolute; bottom: -60px; left: 40px;
+                        width: 150px; height: 150px; border-radius: 50%; border: 5px solid white;">
+        </div>
+        <br><br>
+        """
+        st.markdown(html, unsafe_allow_html=True)
 
+        # Profile Header
+        st.markdown("## Shinn Gee Choo  \n**Meng Robotics Engineering Student at the University of Bath**  \n📍 Bath, England, United Kingdom")
 
+        # Open to Work
+        st.markdown("### ✅ Open to Work")
+        st.write("Mechanical Engineer, Electrical Engineer and Software Engineer Internship")
 
-        
+        # Navigation Tip
+        st.markdown("---")
+        st.markdown("👈 Use the sidebar to navigate through my portfolio and explore my engineering projects.")
+    else:
+        st.info("⬆️ Please upload both a banner and profile image to start.")
 
-    # Profile Header
-    st.markdown("## Shinn Gee Choo  \n**Meng Robotics Engineering Student at the University of Bath** \n**University of Bath**  \n📍 Bath, England, United Kingdom")
-
-    # Open to Work
-    st.markdown("### ✅ Open to Work")
-    st.write("Mechanical Engineer, Electrical Engineer and Software Engineer Internship")
-
-    # Final note
-    st.markdown("---")
-    st.markdown("👈 Use the sidebar to navigate through my portfolio and explore my engineering projects.")
-
-
+# === About Me ===
 elif section == "About Me":
     st.header("👋 About Me")
     st.markdown("""
@@ -96,103 +96,93 @@ Outside of engineering, I’m active in sports, event organising, and creative t
 My goal is to become a forward-thinking engineer who blends creativity with robust technical foundations—whether it’s in **autonomous robotics**, **intelligent machines**, or **cutting-edge aerospace systems**.
     """)
 
-# Embedded Project Section
+# === Embedded Project ===
 elif section == "Real-Time Embedded Project":
     st.header("⚙️ Real-Time Embedded Software")
     st.subheader("PID Motor Control")
-    st.markdown("""
-    - Developed a real-time PID motor control system
-    """)
+    st.markdown("- Developed a real-time PID motor control system")
     st.code("""
-    float computePID(float setpoint, float measured, float Kp, float Ki, float Kd) {
-        static float integral = 0, last_error = 0;
-        float error = setpoint - measured;
-        integral += error;
-        float derivative = error - last_error;
-        last_error = error;
-        return Kp * error + Ki * integral + Kd * derivative;
-    }
+float computePID(float setpoint, float measured, float Kp, float Ki, float Kd) {
+    static float integral = 0, last_error = 0;
+    float error = setpoint - measured;
+    integral += error;
+    float derivative = error - last_error;
+    last_error = error;
+    return Kp * error + Ki * integral + Kd * derivative;
+}
     """, language="c")
 
-# Simulation Section
+# === Simulation ===
 elif section == "Simulation & Modelling":
     st.header("🧠 Simulation & Modelling")
     st.subheader("Autonomous Path Following with Simulink & Python")
     st.markdown("""
-    - Created a **multi-level PID vehicle controller**
-    - Built path tracking logic in **MATLAB/Simulink** and validated in Python
-    - Simulated different terrains and sensor noise scenarios
+- Created a **multi-level PID vehicle controller**
+- Built path tracking logic in **MATLAB/Simulink** and validated in Python
+- Simulated different terrains and sensor noise scenarios
     """)
     st.image("https://via.placeholder.com/800x300.png?text=Path+Following+Simulation", use_container_width=True)
 
-# Linux Section
+# === Linux Work ===
 elif section == "Linux Work":
     st.header("🐧 Embedded Linux")
     st.markdown("""
-    - Daily user of **Linux systems**, particularly **Arch Linux**, with a personalized development setup  
-    - Experience running and maintaining projects on **Raspberry Pi**, including building an **ad-blocking server (Pi-hole)**  
-    - Comfortable with **terminal-based workflows**, **shell scripting**, and system configuration  
+- Daily user of **Linux systems**, particularly **Arch Linux**, with a personalized development setup  
+- Experience running and maintaining projects on **Raspberry Pi**, including building an **ad-blocking server (Pi-hole)**  
+- Comfortable with **terminal-based workflows**, **shell scripting**, and system configuration  
     """)
 
+# === Skills ===
 elif section == "Skills":
     st.header("🛠 Technical Skills")
     st.markdown("""
-    ### 💻 Programming & Coding
-    - Proficient in: **Python**, **MATLAB**, **JavaScript**, **HTML**
-    - Experience with **embedded systems** using Arduino
+### 💻 Programming & Coding
+- Proficient in: **Python**, **MATLAB**, **JavaScript**, **HTML**
+- Experience with **embedded systems** using Arduino
 
-    ### 🧰 Tools & Software
-    - **Microsoft Office**: Word, Publisher, PowerPoint (for technical reports & presentations)
-    - **Adobe Dreamweaver**: Website and data pack creation using HTML/JavaScript
-    - **3D CAD Software**: Design and additive manufacturing using CAD tools
-    - **Circuit & PCB Design**: OrCAD Capture (schematic), PCB Designer (layout), PSpice (simulation)
-    - **Simulation & Modeling**: MATLAB, Simulink
-    - Version Control: Experienced in using GitHub to manage code changes and collaboration.
-    - **Operating Systems**: Linux (Arch Linux with custom environment)
+### 🧰 Tools & Software
+- **Microsoft Office**: Word, Publisher, PowerPoint (for technical reports & presentations)
+- **Adobe Dreamweaver**: Website and data pack creation using HTML/JavaScript
+- **3D CAD Software**: Design and additive manufacturing using CAD tools
+- **Circuit & PCB Design**: OrCAD Capture, PCB Designer, PSpice
+- **Simulation & Modeling**: MATLAB, Simulink
+- Version Control: GitHub for collaboration and code tracking
+- **Operating Systems**: Linux (Arch Linux with custom environment)
 
-    ### 🤖 Robotics & Mechatronics
-    - Experience building robotic systems (e.g. **quadruped**, **self-balancing line-following robot**)
-    - Integration of mechanical, electrical, and software systems
-    - Applying principles of **PID control** and **feedback loops** for precise movement
-    - Familiarity with sensors such as **IMUs** and **infrared line sensors**
-    - Prototyping and testing robotic hardware and software
+### 🤖 Robotics & Mechatronics
+- Experience building robotic systems (e.g. **quadruped**, **self-balancing line-following robot**)
+- Integration of mechanical, electrical, and software systems
+- PID control and feedback loop design
+- Familiarity with IMUs and infrared line sensors
 
-    ### 📊 Data Analysis & Testing
-    - Analyzing and visualizing data with **Excel** and **MATLAB**
-    - Skilled in using **oscilloscopes**, **multimeters**, and **signal generators**
+### 📊 Data Analysis & Testing
+- Data visualization and analysis with **Excel** and **MATLAB**
+- Skilled in using **oscilloscopes**, **multimeters**, and **signal generators**
 
-    ### 🤖 Machine Learning
-    - Understanding of **supervised learning**, **regression**, and **classification**
-    - Exposure to **scikit-learn**, **NumPy**, and **pandas**
+### 🧠 Machine Learning
+- Understanding of supervised learning, regression, classification
+- Exposure to **scikit-learn**, **NumPy**, **pandas**
 
-    ### 🧪 Hardware & Soldering
-    - Hands-on experience with **soldering**, prototyping, and electronics repair
-    - Confident in **circuit testing**, **troubleshooting**, and iterative design
+### 🧪 Hardware & Soldering
+- Hands-on experience with **soldering**, prototyping, and electronics repair
+- Circuit testing and troubleshooting
 
-    ### 🧠 Engineering Concepts
-    - Strong grasp of **kinematics**, **motor control**, and **real-time systems**
+### 📋 Project Management
+- Project planning with **Gantt Charts**, **Agile**, and **Notion**
 
-    ### 📋 Project Management
-    - Experienced in project planning with **Gantt Charts**, **Agile workflows**, and tools like **Notion**
+### 🤝 Soft Skills
+- Effective communicator, time manager, and team collaborator
 
-    ### 🤝 Soft Skills
-    - Effective **communication**, **time management**, **problem-solving**, and **team collaboration**
-
-    ### 🌐 Languages
-    - Fluent in **English** & **Chinese**
+### 🌐 Languages
+- Fluent in **English** and **Chinese**
     """)
 
-
-
-
-# Contact Section
+# === Contact ===
 elif section == "Contact":
     st.header("📫 Get in Touch")
     st.markdown("""
-    - **Name**: Choo Shinn Gee  
-    - **Email**: chooshinngee@gmail.com
-    - **LinkedIn**: [linkedin.com/in/choosg](https://linkedin.com/in/choosg)  
-    - **GitHub**: [github.com/choo12204](https://github.com/choo12204)
+- **Name**: Choo Shinn Gee  
+- **Email**: chooshinngee@gmail.com  
+- **LinkedIn**: [linkedin.com/in/choosg](https://linkedin.com/in/choosg)  
+- **GitHub**: [github.com/choo12204](https://github.com/choo12204)
     """)
-
-
