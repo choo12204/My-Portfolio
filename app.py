@@ -1,5 +1,7 @@
 import streamlit as st
-from PIL import Image
+from PIL import Image, ImageDraw, ImageOps
+import base64
+from io import BytesIO
 
 st.set_page_config(page_title="Shinn Gee Choo | Portfolio", page_icon=":wrench:", layout="wide")
 
@@ -18,25 +20,55 @@ section = st.sidebar.radio(
     ]
 )
 
+def image_to_base64(img: Image.Image, format="PNG"):
+    buffered = BytesIO()
+    img.save(buffered, format=format)
+    return base64.b64encode(buffered.getvalue()).decode()
+
 # === Welcome Section ===
 if section == "Welcome":
-    # Load and display banner image
-    image_path = r"C:\Users\choo12204\PycharmProjects\Helloworld\pythonProject\DSC01632.JPG"
-    banner = Image.open(image_path)  # Replace with the path to your image
-    st.image(banner, use_column_width=True)
+    # Load banner
+    banner_path = r"C:\Users\choo12204\PycharmProjects\Helloworld\pythonProject\DSC01631.JPG"
+    banner_img = Image.open(banner_path).convert("RGB")
+    banner_b64 = image_to_base64(banner_img, format="JPEG")
+
+    # Load and crop profile image circular
+    profile_path = r"C:\Users\choo12204\PycharmProjects\Helloworld\pythonProject\IMG_4185.JPG"
+    profile_img = Image.open(profile_path).convert("RGBA")
+
+    size = min(profile_img.size)
+    left = (profile_img.width - size) // 2
+    top = (profile_img.height - size) // 2
+    cropped = profile_img.crop((left, top, left + size, top + size))
+
+    mask = Image.new("L", (size, size), 0)
+    draw = ImageDraw.Draw(mask)
+    draw.ellipse((0, 0, size, size), fill=255)
+
+    circular = ImageOps.fit(cropped, (size, size))
+    circular.putalpha(mask)
+    circular_b64 = image_to_base64(circular)
+
+
+    # HTML layout with overlap
+    html = f"""
+    <div style="position: relative; text-align: left;">
+        <img src="data:image/jpeg;base64,{banner_b64}" style="width: 100%; border-radius: 10px;">
+        <img src="data:image/png;base64,{circular_b64}"
+             style="position: absolute; bottom: -60px; left: 40px;
+                    width: 150px; height: 150px; border-radius: 50%; border: 5px solid white;">
+    </div>
+    <br><br>
+    """
+
+    st.markdown(html, unsafe_allow_html=True)
+
+
+
+        
 
     # Profile Header
-    st.markdown("## Shinn Gee Choo  \n**Meng Robotics Engineering Student at the University of Bath**  \n📍 Bath, England, United Kingdom")
-
-    # Contact Info
-    st.markdown("[📂 GitHub Repository](https://github.com/choo12204/MinecraftDatapacks)")
-
-    # University Logo and Tag
-    col1, col2 = st.columns([1, 3])
-    with col1:
-        st.image("https://upload.wikimedia.org/wikipedia/en/e/e1/University_of_Bath_logo.svg", width=80)
-    with col2:
-        st.markdown("🏫 **University of Bath**")
+    st.markdown("## Shinn Gee Choo  \n**Meng Robotics Engineering Student at the University of Bath** \n**University of Bath**  \n📍 Bath, England, United Kingdom")
 
     # Open to Work
     st.markdown("### ✅ Open to Work")
@@ -57,9 +89,9 @@ Over the past few years, I’ve immersed myself in a variety of technical projec
 My academic and extracurricular involvement with teams like **Team Bath Roving** and **Team Bath Hydrobotics** has honed my skills in:
 - **Mechatronic integration**
 - **Team-based design and development**
-- **Rapid prototyping using 3D printing and electronics**
+- **Rapid prototyping using 3D printing**
 
-Outside of engineering, I’m active in sports, event organising, and creative technical hobbies like building LEGO-based robots and designing **Minecraft data packs** to experiment with logic and automation.
+Outside of engineering, I’m active in sports, event organising, and creative technical hobbies like building **LEGO-based robots** and designing **Minecraft data packs** to experiment with logic and automation.
 
 My goal is to become a forward-thinking engineer who blends creativity with robust technical foundations—whether it’s in **autonomous robotics**, **intelligent machines**, or **cutting-edge aerospace systems**.
     """)
@@ -147,7 +179,7 @@ elif section == "Skills":
     - Effective **communication**, **time management**, **problem-solving**, and **team collaboration**
 
     ### 🌐 Languages
-    - Fluent in **English** & **Chinese*
+    - Fluent in **English** & **Chinese**
     """)
 
 
