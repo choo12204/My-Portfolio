@@ -29,7 +29,7 @@ def image_to_base64(img: Image.Image, format="PNG"):
 # === Welcome Section ===
 if section == "Welcome":
     # Load banner
-    banner_url = "https://raw.githubusercontent.com/choo12204/My-Portfolio/main/DSC01632.JPG"
+    banner_url = "https://raw.githubusercontent.com/choo12204/My-Portfolio/main/DSC01631.JPG"
     response = requests.get(banner_url)
     banner_img = Image.open(BytesIO(response.content)).convert("RGB")
     banner_b64 = image_to_base64(banner_img, format="JPEG")
