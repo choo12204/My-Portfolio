@@ -1,6 +1,7 @@
 import streamlit as st
 from PIL import Image, ImageDraw, ImageOps
 import base64
+import request
 from io import BytesIO
 
 st.set_page_config(page_title="Shinn Gee Choo | Portfolio", page_icon=":wrench:", layout="wide")
@@ -28,13 +29,14 @@ def image_to_base64(img: Image.Image, format="PNG"):
 # === Welcome Section ===
 if section == "Welcome":
     # Load banner
-    banner_path = r"C:\Users\choo12204\PycharmProjects\Helloworld\pythonProject\DSC01631.JPG"
-    banner_img = Image.open(banner_path).convert("RGB")
-    banner_b64 = image_to_base64(banner_img, format="JPEG")
-
+  banner_url = "https://raw.githubusercontent.com/choo12204/My-Portfolio/main/images/DSC01631.JPG"
+response = requests.get(banner_url)
+banner_img = Image.open(BytesIO(response.content)).convert("RGB")
+banner_b64 = image_to_base64(banner_img, format="JPEG")
     # Load and crop profile image circular
-    profile_path = r"C:\Users\choo12204\PycharmProjects\Helloworld\pythonProject\IMG_4185.JPG"
-    profile_img = Image.open(profile_path).convert("RGBA")
+    profile_url = "https://raw.githubusercontent.com/choo12204/My-Portfolio/main/images/IMG_4185.JPG"
+response = requests.get(profile_url)
+profile_img = Image.open(BytesIO(response.content)).convert("RGBA")
 
     size = min(profile_img.size)
     left = (profile_img.width - size) // 2
