@@ -13,7 +13,7 @@ section = st.sidebar.radio(
     [
         "Welcome",
         "About Me",
-        "Python",
+        "Python Programming",
         "Simulation & Modelling",
         "Linux Work",
         "Skills",
