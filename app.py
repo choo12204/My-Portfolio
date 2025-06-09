@@ -13,7 +13,7 @@ section = st.sidebar.radio(
     [
         "Welcome",
         "About Me",
-        "Real-Time Embedded Project",
+        "Python",
         "Simulation & Modelling",
         "Linux Work",
         "Skills",
@@ -67,10 +67,6 @@ if section == "Welcome":
 
     st.markdown(html, unsafe_allow_html=True)
 
-
-
-
-
     # Profile Header
     st.markdown("## Shinn Gee Choo  \n**Meng Robotics Engineering Student at the University of Bath** \n**University of Bath**  \n📍 Bath, England, United Kingdom")
 
@@ -101,22 +97,83 @@ My goal is to become a forward-thinking engineer who blends creativity with robu
     """)
 
 # Embedded Project Section
-elif section == "Real-Time Embedded Project":
-    st.header("⚙️ Real-Time Embedded Software")
-    st.subheader("PID Motor Control")
+elif section == "Python Programming":
+    st.header("🐍 Python Programming")
+    
+    st.subheader("Fundamentals")
     st.markdown("""
-    - Developed a real-time PID motor control system
+    - 🧠 **Key Learning Outcomes**  
+    This 6-hour course from Mosh Hamedani on YouTube provided a complete beginner-to-intermediate understanding of Python programming, covering everything from fundamentals to building web apps and doing machine learning.
     """)
-    st.code("""
-    float computePID(float setpoint, float measured, float Kp, float Ki, float Kd) {
-        static float integral = 0, last_error = 0;
-        float error = setpoint - measured;
-        integral += error;
-        float derivative = error - last_error;
-        last_error = error;
-        return Kp * error + Ki * integral + Kd * derivative;
-    }
-    """, language="c")
+
+    st.subheader("📘 What I Learned")
+
+    st.markdown("### 1. Core Python Concepts")
+    st.markdown("""
+    - Variables, data types (str, int, float, bool)
+    - Arithmetic and logical operators
+    - Control flow (`if`, `for`, `while`)
+    - Functions with `*args` and `**kwargs`
+    - Error handling with `try`, `except`, `finally`, `with`
+    """)
+
+    st.markdown("### 2. Data Structures")
+    st.markdown("""
+    - Lists, tuples, sets, and dictionaries
+    - List comprehensions, `map()`, `filter()`, `zip()`
+    - Stacks, queues, and custom containers
+    """)
+
+    st.markdown("### 3. Object-Oriented Programming (OOP)")
+    st.markdown("""
+    - Classes, objects, constructors
+    - Instance vs class attributes
+    - Inheritance, polymorphism, encapsulation
+    - Special methods (`__str__`, `__repr__`)
+    - Data classes and reusable modular components
+    """)
+
+    st.markdown("### 4. Modules and the Standard Library")
+    st.markdown("""
+    - Creating/importing modules and packages
+    - File handling, date/time, JSON, CSV, SQLite
+    - Automation using ZIP, email, PDF, and web scraping tools
+    """)
+
+    st.markdown("### 5. Working with External Packages")
+    st.markdown("""
+    - Installing packages via `pip` and `pipenv`
+    - Using virtual environments
+    - Accessing and securing APIs (e.g., Yelp, Twilio)
+    """)
+
+    st.markdown("### 6. Web Development with Django")
+    st.markdown("""
+    - Creating projects, apps, views, templates, and admin interfaces
+    - Using Django ORM for database operations
+    - Structuring URLs and handling HTTP requests/responses
+    """)
+    
+    st.markdown("### 7. Introduction to Machine Learning")
+    st.markdown("""
+    - Understanding supervised learning and model training
+    - Using `scikit-learn` for building, testing, and saving models
+    - Data cleaning and visualization
+    """)
+
+    st.subheader("🔧 Tools & Practices")
+    st.markdown("""
+    - VS Code tips, debugging, extensions
+    - Jupyter Notebooks for data analysis
+    - Writing docstrings and maintaining clean, readable code
+    """)
+
+    st.subheader("📌 Takeaway")
+    st.markdown("""
+    This course gave me a strong foundation in Python, with practical skills in web development, automation, and machine learning.  
+    It also emphasized best practices, clean code, and a clear understanding of the Python ecosystem.
+    """)
+  
 
 # Simulation Section
 elif section == "Simulation & Modelling":
