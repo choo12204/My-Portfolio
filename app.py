@@ -360,9 +360,9 @@ elif section == "Signal & Communication Systems":
         - Characterized the amplified signal through spectrogram and time-series analysis to evaluate system performance.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Pictures/Screenshot 2025-05-06 114010.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/Screenshot 2025-05-06 114953.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/Screenshot 2025-05-06 114000.png", use_container_width=True)
+        st.image("Screenshot 2025-05-06 114010.png", use_container_width=True)
+        st.image("Screenshot 2025-05-06 114953.png", use_container_width=True)
+        st.image("Screenshot 2025-05-06 114000.png", use_container_width=True)
 
     st.subheader("🎛️ FIR Filter Design (MATLAB)")
     col1, col2 = st.columns([2, 1])
@@ -375,8 +375,8 @@ elif section == "Signal & Communication Systems":
         - Gained practical experience in noise suppression, signal isolation, and filter tuning — key concepts in real-world signal processing applications.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Downloads/page_1.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/page_2.png", use_container_width=True)
+        st.image("page_1.png", use_container_width=True)
+        st.image("page_2.png", use_container_width=True)
         
 
 
@@ -396,9 +396,9 @@ elif section == "Signal & Communication Systems":
         - Discussed bandwidth vs. data rate trade-offs and suggested techniques like equalization and impedance matching to mitigate degradation.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Downloads/transmissionlinemismatch.PNG.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/transmissionline.PNG.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/transmissionlinefreqresponse.PNG.png", use_container_width=True)
+        st.image("transmissionlinemismatch.PNG.png", use_container_width=True)
+        st.image("transmissionline.PNG.png", use_container_width=True)
+        st.image("transmissionlinefreqresponse.PNG.png", use_container_width=True)
 
 
     st.subheader("🔗 Characterisation of Coupled Transmission Lines")
@@ -414,10 +414,10 @@ elif section == "Signal & Communication Systems":
         - Reinforced the importance of impedance matching and capacitive isolation to maintain signal integrity in PCB and communication line design.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Downloads/cmos3.3.PNG.png.1.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/0.25.PNG.png.1.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/1mf.PNG.png.1.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/condition5.PNG.png.1.png", use_container_width=True)
+        st.image("cmos3.3.PNG.png.1.png", use_container_width=True)
+        st.image("0.25.PNG.png.1.png", use_container_width=True)
+        st.image("1mf.PNG.png.1.png", use_container_width=True)
+        st.image("condition5.PNG.png.1.png", use_container_width=True)
 
 
 
