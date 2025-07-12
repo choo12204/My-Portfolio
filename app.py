@@ -18,7 +18,7 @@ section = st.sidebar.radio(
         "Mechanical Design & Manufacture",
         "Signal & Communication Systems",
         "Computational Simulation",
-        "Data Analysis and Visualization",
+        "Data Analysis & Visualization",
         "Linux & Development Environment",
         "Team Projects & Competitions",
         "Sustainability and Engineering Impact",
