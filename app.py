@@ -154,7 +154,7 @@ elif section == "Programming & Embedded Systems":
         """)
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
-        st.video("C:/Users/LENOVO/Videos/Captures/C__Users_LENOVO_source_repos_Snake_x64_Debug_Snake.exe 2025-07-11 01-30-35.mp4")
+        st.video("C__Users_LENOVO_source_repos_Snake_x64_Debug_Snake.exe 2025-07-11 01-30-35.mp4")
     with col1:
         st.markdown("""
         ### **Javascript**  
