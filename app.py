@@ -191,6 +191,7 @@ elif section == "Programming & Embedded Systems":
         st.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
         st.video("selfbalancingrobot.mp4")
     
+     
     with col1:
         st.markdown("""
         ### **🧩 Mechatronic Escapade**  
@@ -236,9 +237,9 @@ elif section == "Circuits, Instrumentation and Power":
         - Gained deeper insights into motor startup, load response, and steady-state dynamics.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Downloads/Screenshot 2025-03-17 124049.png.1.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/Screenshot 2025-03-17 124100.png.2.png", use_container_width=True)
-        st.image("C:/Users/LENOVO/Downloads/Screenshot 2025-03-17 124005.png", use_container_width=True)
+        st.image("Screenshot 2025-03-17 124049.png.1.png", use_container_width=True)
+        st.image("Screenshot 2025-03-17 124100.png.2.png", use_container_width=True)
+        st.image("Screenshot 2025-03-17 124005.png", use_container_width=True)
 
     st.subheader("🛠 Motor Speed Control Circuit")
     col1, col2 = st.columns([2, 1])
@@ -255,8 +256,8 @@ elif section == "Circuits, Instrumentation and Power":
             - Load sensitivity causing unstable speed; proposed using a closed-loop feedback system with a speed sensor.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Pictures/graphdutyy (1).png", use_container_width=True)
-        st.video("C:/Users/LENOVO/Downloads/VID_20250312_145759.mp4")
+        st.image("graphdutyy (1).png", use_container_width=True)
+        st.video("VID_20250312_145759.mp4")
 
     st.subheader("🤖 Dynamic System Simulation in Simulink")
     col1, col2 = st.columns([2, 1])
@@ -273,9 +274,9 @@ elif section == "Circuits, Instrumentation and Power":
     - Visualized and tested logic using separated logic blocks in Simulink for clarity and modularity.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Pictures/Simulink.png",caption="Simulink", use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/Screenshot 2025-03-13 142832.png",caption="Left Output", use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/Screenshot 2025-03-13 142839.png",caption="Right Output", use_container_width=True)
+        st.image("Simulink.png",caption="Simulink", use_container_width=True)
+        st.image("Screenshot 2025-03-13 142832.png",caption="Left Output", use_container_width=True)
+        st.image("Screenshot 2025-03-13 142839.png",caption="Right Output", use_container_width=True)
 
     st.subheader("⚡ Power Electronics Simulation and Design Evaluation")
     col1, col2 = st.columns([2, 1])
@@ -289,8 +290,8 @@ elif section == "Circuits, Instrumentation and Power":
         - Developed simulation skills applicable to embedded systems, EV modules, and DC-DC power control circuits.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Pictures/circuit diagram (1).png",caption="Simulation", use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/simulation (1).png",caption="Circuit Diagram", use_container_width=True)
+        st.image("circuit diagram (1).png",caption="Simulation", use_container_width=True)
+        st.image("simulation (1).png",caption="Circuit Diagram", use_container_width=True)
     
         
 
