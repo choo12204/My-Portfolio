@@ -139,9 +139,9 @@ elif section == "Programming & Embedded Systems":
         """)
     with col2:
         st.markdown("<br><br>", unsafe_allow_html=True)
-        st.image("C:/Users/LENOVO/Pictures/1749381980605.jpg",caption="Excel Automation",use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/1749381980670.jpg",caption="Machine Learning",use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/Screenshots/Screenshot 2025-07-11 004530.png",caption="Portfolio",use_container_width=True)
+        st.image("1749381980605.jpg",caption="Excel Automation",use_container_width=True)
+        st.image("1749381980670.jpg",caption="Machine Learning",use_container_width=True)
+        st.image("Screenshot 2025-07-11 004530.png",caption="Portfolio",use_container_width=True)
 
     with col1:
         st.markdown("""
@@ -164,7 +164,7 @@ elif section == "Programming & Embedded Systems":
         """)
     with col2:
         st.markdown("<br><br><br>", unsafe_allow_html=True)
-        st.image("C:/Users/LENOVO/Pictures/1747066712134.jpg",caption="Character: Percy",use_container_width=True)
+        st.image("1747066712134.jpg",caption="Character: Percy",use_container_width=True)
 
 
     with col1:
@@ -189,7 +189,7 @@ elif section == "Programming & Embedded Systems":
         """)
     with col2:
         st.markdown("<br><br><br><br><br><br><br><br>", unsafe_allow_html=True)
-        st.video("C:/Users/LENOVO/Downloads/selfbalancingrobot.mp4")
+        st.video("selfbalancingrobot.mp4")
     
     with col1:
         st.markdown("""
@@ -203,8 +203,8 @@ elif section == "Programming & Embedded Systems":
         """)
     with col2:
         st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
-        st.image("C:/Users/LENOVO/Pictures/Screenshot 2024-03-13 095855.png",caption="3D Model",use_container_width=True)
-        st.image("C:/Users/LENOVO/Pictures/WhatsApp Image 2024-03-10 at 7.16.36 PM.jpeg",caption="Circuit Prototype",use_container_width=True)
+        st.image("Screenshot 2024-03-13 095855.png",caption="3D Model",use_container_width=True)
+        st.image("WhatsApp Image 2024-03-10 at 7.16.36 PM.jpeg",caption="Circuit Prototype",use_container_width=True)
 
     with col1:
         st.markdown("<br><br><br><br><br><br><br>", unsafe_allow_html=True)
