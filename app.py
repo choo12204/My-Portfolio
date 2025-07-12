@@ -310,7 +310,7 @@ elif section == "Mechanical Design & Manufacture":
         - Engraved a username tag using the **“Emboss”** feature with a 0.5mm depth for personalization and professional finish.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Pictures/Screenshot 2024-03-13 095855.png", caption="3D Case", use_container_width=True)
+        st.image("Screenshot 2024-03-13 095855.png", caption="3D Case", use_container_width=True)
 
     st.subheader("📐 2D CAD Drawing: Technical Documentation of Arduino Case")
     col1, col2 = st.columns([2, 1])
@@ -322,7 +322,7 @@ elif section == "Mechanical Design & Manufacture":
         """)
     with col2:
         import base64
-        with open("C:/Users/LENOVO/Downloads/PW3caseA.pdf", "rb") as f:
+        with open("PW3caseA.pdf", "rb") as f:
             base64_pdf = base64.b64encode(f.read()).decode("utf-8")
         st.markdown(f'''
             <iframe src="data:application/pdf;base64,{base64_pdf}"height="200" type="application/pdf"></iframe>
@@ -339,7 +339,7 @@ elif section == "Mechanical Design & Manufacture":
         - Developed an understanding of rapid prototyping workflow, including slicing setup and design-for-manufacture considerations.
         """)
     with col2:
-        st.image("C:/Users/LENOVO/Downloads/image (1).png", caption="Sliced Part", use_container_width=True)
+        st.image("image (1).png", caption="Sliced Part", use_container_width=True)
 
     
 
