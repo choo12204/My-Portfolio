@@ -419,32 +419,97 @@ elif section == "Signal & Communication Systems":
         st.image("1mf.PNG.png.1.png", use_container_width=True)
         st.image("condition5.PNG.png.1.png", use_container_width=True)
 
-
-
-
-
 # Simulation Section
 elif section == "Computational Simulation":
     st.header("Computational Simulation")
-    st.subheader("Autonomous Path Following with Simulink & Python")
-    st.markdown("""
-    - Created a **multi-level PID vehicle controller**
-    - Built path tracking logic in **MATLAB/Simulink** and validated in Python
-    - Simulated different terrains and sensor noise scenarios
-    """)
-    st.image("https://via.placeholder.com/800x300.png?text=Path+Following+Simulation", use_container_width=True)
+    st.subheader("🧮 Computational Modelling & Analysis – 1D Heat Transfer Simulation")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        - Simulated 1D heat diffusion along a rod using the heat equation:∂T/∂t = α ∂²T/∂x² where T = temperature, α = thermal diffusivity.
+        - Implemented both explicit and implicit numerical methods in MATLAB to analyze transient thermal behavior.
+        - Applied two boundary condition types:
+            - Dirichlet (fixed ends): Heat dissipated outward.
+            - Neumann (insulated ends): Heat redistributed internally.
+        - Initiated the system with a sinusoidal temperature profile to simulate realistic thermal gradients.
+        - Analyzed stability:
+            - Explicit method intuitive but unstable at large time steps.
+            - Implicit method remained stable and accurate.
+        - Insights applied to thermal system design, insulation engineering, and heat management in embedded systems.
+        """)
+    with col2:
+        st.image("Screenshot 2025-03-20 141325.png", use_container_width=True)
+        st.image("Screenshot 2025-03-20 141313.png", use_container_width=True)
+        st.image("Screenshot 2025-05-01 120921.png", use_container_width=True)
+
+    st.subheader("🧲 Finite Element Analysis – Wireless Power Transfer (WPT) System using Ansys HFSS")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        What I Did:
+        - Modeled a wireless power transfer system using inductively coupled coils.
+        - Applied Maxwell’s equations (Faraday’s Law & Magnetostatic curl) using the finite element method (FEM) in Ansys HFSS.
+        - Defined the following model components:
+            - Geometry: Two parallel circular copper coils
+            - Material: Copper in a vacuum enclosure
+            - Boundary: Radiation boundary to minimize wave reflection
+            - Excitations: Lumped ports to simulate AC current input
+            - Meshing: Adaptive refinement in high-field regions for accuracy
+            - Solver: Frequency-domain sweep
+        What I Analyzed:
+        - Magnetic field distribution around coils to study energy transfer efficiency
+        - Impedance vs. frequency to identify optimal resonance and minimize losses
+        """)
+    with col2:
+        st.image("FEAoutput.PNG.png", use_container_width=True)
+        st.image("fea.PNG.png", use_container_width=True)
+        st.image("fea2.PNG.1.png", use_container_width=True)
+
+
+
 
 # Simulation Section
 elif section == "Data Analysis & Visualization":
-    st.header("Data Analysis & Visualization")
-    st.subheader("Autonomous Path Following with Simulink & Python")
-    st.markdown("""
-    - Created a **multi-level PID vehicle controller**
-    - Built path tracking logic in **MATLAB/Simulink** and validated in Python
-    - Simulated different terrains and sensor noise scenarios
-    """)
-    st.image("https://via.placeholder.com/800x300.png?text=Path+Following+Simulation", use_container_width=True)
+    st.header("Data Analysis & Visualization – Sea Ice Concentration using MATLAB")
+    st.subheader("📊 Data Analysis")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        What I Did:
+        - Analyzed European Space Agency (ESA) sea ice data in MATLAB.
+        - Imported and visualized the data using pseudocolor plots with latitude and longitude axes.
+        - Created comparative visualizations for different seasons to study environmental patterns.
+                    
+        What I Discovered:
+        - Darker shades indicate higher sea ice concentration; lighter shades show melt or water regions.
+        - Observed seasonal variation: higher ice concentration in January (winter) and lower in August (summer).
+        - Identified regional differences and melting trends, highlighting potential climate change impact.
+        """)
+    with col2:
+        st.image("Screenshot 2024-04-25 000254.png", use_container_width=True)
+        st.image("Screenshot 2024-04-24 231155.png", use_container_width=True)
 
+
+
+    st.subheader("📈 Data Visualization")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        Purpose:
+        - To transform complex geospatial data into clear, interpretable visuals for environmental insight and decision-making.
+                    
+        What I Did:
+        - Used pseudocolor plots in MATLAB to map sea ice concentration over latitude and longitude.
+        - Added axis labels and a colorbar to communicate geographic context and concentration levels clearly.
+                    
+        Why It Works:
+        - Color mapping makes patterns in ice distribution easy to interpret.
+        - Enables comparison across time and geography, supporting climate trend analysis and scientific communication.
+        """)
+    with col2:
+        st.image("Screenshot 2024-04-24 235505.png", use_container_width=True)
+
+    
 # Simulation Section
 elif section == "Linux & Development Environment":
     st.header("Linux & Development Environment")
