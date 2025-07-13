@@ -86,8 +86,11 @@ elif section == "About Me":
     st.header("👋 About Me")
     st.markdown("""
         I'm a passionate and curious engineering student pursuing an MEng in Robotics Engineering at the University of Bath. My journey blends creativity with technical problem-solving, from building quadruped robots in my free time to designing high-performance PCBs and embedded systems for real-world applications.
+        
         I thrive at the intersection of mechanical design, electronics, and software. Through hands-on projects in CAD, control systems, power electronics, and machine learning, I've developed a solid foundation in designing and simulating complex systems. I’ve also contributed to open-source game development communities and led teams in both sports and engineering competitions.
+        
         Whether it’s crafting a functional Arduino case, fine-tuning a buck converter in LTspice, or soldering components on a multilayer PCB, I take pride in learning by doing. I enjoy sharing what I learn, through code, collaboration, or community engagement.
+        
         I'm driven by a vision to turn ideas into impactful innovations and I’m just getting started.
         
         """)
