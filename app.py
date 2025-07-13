@@ -15,13 +15,12 @@ section = st.sidebar.radio(
         "About Me",
         "Programming & Embedded Systems",
         "Circuits, Instrumentation and Power",
+        "PCB Design & Manufacture",
         "Mechanical Design & Manufacture",
         "Signal & Communication Systems",
         "Computational Simulation",
         "Data Analysis & Visualization",
         "Linux & Development Environment",
-        "Team Projects & Competitions",
-        "Sustainability and Engineering Impact",
         "Contact"
     ]
 )
@@ -293,7 +292,63 @@ elif section == "Circuits, Instrumentation and Power":
         st.image("circuit diagram (1).png",caption="Simulation", use_container_width=True)
         st.image("simulation (1).png",caption="Circuit Diagram", use_container_width=True)
     
-        
+ # Simulation Section
+elif section == "PCB Design & Manufacture":
+    st.header("PCB Design & Manufacture")
+    st.subheader("🛠️ Design for Manufacturing")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        - Schematic & PCB Design (OrCAD): Created microphone amplifier schematics, assigned footprints, and routed PCBs using OrCAD tools. Netlisted schematics and completed board layout in PCB Editor.
+        - Custom Footprint Creation: Designed component padstacks (e.g., carbon resistor) in Padstack Editor and constructed new symbols like a quad OpAmp using Capture CIS.
+        - Footprint Editing & Replacement: Modified library footprints using Padstack Replace to meet specific design requirements.
+        - DFM Guideline Application: Applied design-for-manufacturing principles by selecting optimal pad sizes, trace widths, and spacing to reduce soldering issues and improve assembly reliability.
+        - Multilayer PCB Design: Extended two-layer amplifier to a four-layer PCB with dedicated GND and power planes for enhanced signal integrity, reduced noise, and improved routing.
+        - Justification of Multilayer Use: Compared cost-performance tradeoffs and justified use of four-layer PCBs in amplifier circuits for superior noise performance and reliability.
+        """)
+    with col2:
+        st.image("Capture (1).PNG.png", use_container_width=True)
+        st.image("3D.PNG.png", use_container_width=True)
+        st.image("Screenshot (9) (1).png.3.png", use_container_width=True)
+
+    st.subheader("🔥 Thermal Design")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        - Applied thermal management strategies in PCB design, such as adding wider copper traces and thermal vias, to reduce heat buildup and ensure safe operating temperatures.
+        - Calculated thermal resistance to evaluate heat dissipation effectiveness, using formulas based on material conductivity, thickness, and area.
+        - Reduced hotspot formation by optimizing copper trace width and enhancing heat transfer pathways.
+        - Reflected on improving component layout by grouping heat-intensive parts near heat sinks for enhanced cooling and long-term reliability.
+        """)
+    with col2:
+        st.image("IMG_0877.jpeg", use_container_width=True)
+        st.image("Capture (2).PNG.3.png", use_container_width=True)
+        st.image("thermaldesignpcbeditor.PNG.png", use_container_width=True)
+
+    st.subheader("📶 Design for Signal Integrity")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        - Ensured robust circuit performance by implementing solid ground and power planes to minimize electromagnetic interference and provide clean return paths.
+        - Shortened and strategically routed critical signal traces to avoid noisy components and reduce crosstalk.
+        - Added decoupling capacitors to filter high-frequency noise and improve signal stability.
+        - Applied signal integrity guidelines to enhance system reliability, especially under high-speed and noisy operating conditions.
+        """)
+    with col2:
+        st.image("WhatsApp Image 2025-04-30 at 18.44.20.jpeg", use_container_width=True)
+        st.image("SignalIntegritySchematic.PNG.png", use_container_width=True)
+
+    st.subheader("🔩 PCB Assembly")
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        st.markdown("""
+        - Participated in through-hole component soldering during Project Week, collaborating with two teammates to assemble the PCB without formal instructions.
+        - Ensured clean and reliable solder joints by using appropriate solder amounts and spacing to prevent bridging or overflow.
+        - Performed continuity testing post-assembly to verify proper electrical connections and prevent short circuits.
+        - Successfully populated the board with components like resistors, capacitors, and ICs, contributing to a fully functional PCB.
+        """)
+    with col2:
+        st.image("20240108_170344.jpg.2.jpg", use_container_width=True)
 
 
 # Mechanical Design & Manufacture Section
@@ -512,86 +567,14 @@ elif section == "Data Analysis & Visualization":
     
 # Simulation Section
 elif section == "Linux & Development Environment":
-    st.header("Linux & Development Environment")
-    st.subheader("Autonomous Path Following with Simulink & Python")
+    st.header("🐧 Linux & Development Environment")
     st.markdown("""
-    - Created a **multi-level PID vehicle controller**
-    - Built path tracking logic in **MATLAB/Simulink** and validated in Python
-    - Simulated different terrains and sensor noise scenarios
+    - Dual-booted Arch Linux with Windows 11 to explore low-level system control and development workflows.
+    - Gained hands-on experience configuring bootloaders, window managers, and resolving system issues independently.
+    - Relied heavily on the Arch Wiki and open-source community to troubleshoot and understand the Linux ecosystem.
+    - Developed greater confidence and problem-solving skills through real-world debugging and system customization.
+    - Continued using Windows for daily tasks while leveraging Linux for experimentation and growth in open-source development.
     """)
-    st.image("https://via.placeholder.com/800x300.png?text=Path+Following+Simulation", use_container_width=True)
-
-# Simulation Section
-elif section == "Team Projects & Competitions":
-    st.header("Team Projects & Competitions")
-    st.subheader("Autonomous Path Following with Simulink & Python")
-    st.markdown("""
-    - Created a **multi-level PID vehicle controller**
-    - Built path tracking logic in **MATLAB/Simulink** and validated in Python
-    - Simulated different terrains and sensor noise scenarios
-    """)
-    st.image("https://via.placeholder.com/800x300.png?text=Path+Following+Simulation", use_container_width=True)
-
-# Simulation Section
-elif section == "Sustainability & Engineering Impact":
-    st.header("Sustainability & Engineering Impact")
-    st.subheader("Autonomous Path Following with Simulink & Python")
-    st.markdown("""
-    - Created a **multi-level PID vehicle controller**
-    - Built path tracking logic in **MATLAB/Simulink** and validated in Python
-    - Simulated different terrains and sensor noise scenarios
-    """)
-    st.image("https://via.placeholder.com/800x300.png?text=Path+Following+Simulation", use_container_width=True)
-    
-elif section == "Skills":
-    st.header("🛠 Technical Skills")
-    st.markdown("""
-    ### 💻 Programming & Coding
-    - Proficient in: **Python**, **MATLAB**, **JavaScript**, **HTML**
-    - Experience with **embedded systems** using Arduino
-
-    ### 🧰 Tools & Software
-    - **Microsoft Office**: Word, Publisher, PowerPoint (for technical reports & presentations)
-    - **Adobe Dreamweaver**: Website and data pack creation using HTML/JavaScript
-    - **3D CAD Software**: Design and additive manufacturing using CAD tools
-    - **Circuit & PCB Design**: OrCAD Capture (schematic), PCB Designer (layout), PSpice (simulation)
-    - **Simulation & Modeling**: MATLAB, Simulink
-    - Version Control: Experienced in using GitHub to manage code changes and collaboration.
-    - **Operating Systems**: Linux (Arch Linux with custom environment)
-
-    ### 🤖 Robotics & Mechatronics
-    - Experience building robotic systems (e.g. **quadruped**, **self-balancing line-following robot**)
-    - Integration of mechanical, electrical, and software systems
-    - Applying principles of **PID control** and **feedback loops** for precise movement
-    - Familiarity with sensors such as **IMUs** and **infrared line sensors**
-    - Prototyping and testing robotic hardware and software
-
-    ### 📊 Data Analysis & Testing
-    - Analyzing and visualizing data with **Excel** and **MATLAB**
-    - Skilled in using **oscilloscopes**, **multimeters**, and **signal generators**
-
-    ### 🤖 Machine Learning
-    - Understanding of **supervised learning**, **regression**, and **classification**
-    - Exposure to **scikit-learn**, **NumPy**, and **pandas**
-
-    ### 🧪 Hardware & Soldering
-    - Hands-on experience with **soldering**, prototyping, and electronics repair
-    - Confident in **circuit testing**, **troubleshooting**, and iterative design
-
-    ### 🧠 Engineering Concepts
-    - Strong grasp of **kinematics**, **motor control**, and **real-time systems**
-
-    ### 📋 Project Management
-    - Experienced in project planning with **Gantt Charts**, **Agile workflows**, and tools like **Notion**
-
-    ### 🤝 Soft Skills
-    - Effective **communication**, **time management**, **problem-solving**, and **team collaboration**
-
-    ### 🌐 Languages
-    - Fluent in **English** & **Chinese**
-    """)
-
-
 
 
 # Contact Section
