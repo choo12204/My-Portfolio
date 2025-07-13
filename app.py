@@ -189,7 +189,6 @@ elif section == "Programming & Embedded Systems":
         """)
     with col2:
         st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
-        st.image("Screenshot 2024-03-13 095855.png",caption="3D Model",use_container_width=True)
         st.image("WhatsApp Image 2024-03-10 at 7.16.36 PM.jpeg",caption="Circuit Prototype",use_container_width=True)
 
     with col1:
