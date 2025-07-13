@@ -85,29 +85,12 @@ if section == "Welcome":
 elif section == "About Me":
     st.header("👋 About Me")
     st.markdown("""
-I’m an aspiring **Robotics Engineer** currently pursuing a degree in **Robotics Engineering**, on track for a **2:1 or higher**. My passion lies in blending **embedded systems**, **mechanical design**, and **intelligent automation** to create real-world solutions.
-
-Over the past few years, I’ve taken on a wide range of technical and hands-on engineering projects, including:
-
-- Building a **self-balancing line-following robot** using Arduino and an MPU6050 sensor
-- Developing a **mechatronic escape room puzzle** with touch sensors, LCDs, and custom enclosures
-- Designing and manufacturing a **toy car** using milling, turning, and Styrofoam cutting machines
-- Programming with **Python, C++, HTML, and JavaScript** for control systems, simulations, and web projects
-- Setting up and managing **Linux development environments**, including Raspberry Pi projects
-- Creating a **machine learning model** to predict PID gains for control systems
-- Automating **Excel-based triathlon timing systems** using `openpyxl` and `matplotlib`
-- Building a professional **Streamlit portfolio website** integrated with GitHub
-- Designing and fabricating **custom PCBs** for embedded and power systems
-
-As a committed team player, I’ve contributed to **Team Bath Roving** and **Team Bath Hydrobotics**, where I helped:
-- Design and 3D-print **robotic components**, including a functional **gripper**
-- Collaborate on multidisciplinary problems in simulation, electronics, and software
-- Apply sustainable engineering practices in team competitions and events
-
-Outside of engineering, I stay active in **sports**, enjoy **organising events**, and spend free time on technical hobbies like building **LEGO-based quadrupeds** and designing logic-driven **Minecraft data packs**.
-
-My goal is to shape the future of **robotics**, **mechatronics**, or **aerospace systems** through innovative thinking and practical engineering excellence.
-""")
+        I'm a passionate and curious engineering student pursuing an MEng in Robotics Engineering at the University of Bath. My journey blends creativity with technical problem-solving, from building quadruped robots in my free time to designing high-performance PCBs and embedded systems for real-world applications.
+        I thrive at the intersection of mechanical design, electronics, and software. Through hands-on projects in CAD, control systems, power electronics, and machine learning, I've developed a solid foundation in designing and simulating complex systems. I’ve also contributed to open-source game development communities and led teams in both sports and engineering competitions.
+        Whether it’s crafting a functional Arduino case, fine-tuning a buck converter in LTspice, or soldering components on a multilayer PCB, I take pride in learning by doing. I enjoy sharing what I learn, through code, collaboration, or community engagement.
+        I'm driven by a vision to turn ideas into impactful innovations and I’m just getting started.
+        
+        """)
 
 
 
